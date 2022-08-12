@@ -4,3 +4,4 @@ En este Readme podrás encontrar las soluciones a los diferentes retos de la cla
 
 - [x] [Reto 1](/reto1/solucion.md)
 - [x] [Reto 2](/reto2/solucion.md)
+- [x] [Reto 3](/reto3/solucion.md)
