@@ -30,13 +30,15 @@ fi
 echo
 
 #Build image
-if [[ $(docker images | grep "node-bootcamp") || $? -eq 1 ]]; then
+if ! docker images | grep "node-bootcamp" > /dev/null ; then
 	docker build -t node-bootcamp:1.0.0 .
 	echo -e "\e[95mImagen node-bootcamp\e[0m creada \e[32m$(printf "\u2714")\e[0m"
+else
+		echo -e "\e[95mLa imagen node-bootcamp\e[0m ya existe"
 fi
 
 # Run container with app
-if [[ $(docker ps -a | grep "node-bootcamp-container") || $? -eq 1 ]]; then
+if ! docker ps -a | grep "node-bootcamp-container" > /dev/null ; then
 	docker run -d --rm  -p 4000:4000 --name node-bootcamp-container  node-bootcamp:1.0.0
 	echo -e "\e[95mContenedor node-bootcamp-container\e[0m corriendo \e[32m$(printf "\u2714")\e[0m"
 	echo -e "\e[95mPuede checarlo en el navegador con \e[0mlocalhost:4000"
