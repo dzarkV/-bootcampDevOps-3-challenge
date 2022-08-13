@@ -62,5 +62,7 @@ if ! docker ps -a | grep "node-bootcamp-container" > /dev/null ; then
 	elif [[ $answer == 'n' ]]; then
 		echo -e "\e[95mDisfrutalo!\e[0m"
 	fi
+else
+	echo -e "\e[95mEl contenedor node-bootcamp-container\e[0m está vivo!"
 fi
 
